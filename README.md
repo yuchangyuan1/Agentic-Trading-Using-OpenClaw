@@ -52,6 +52,11 @@ python scripts/run_live_stock_pipeline.py
 python scripts/end_of_day_rollup.py
 ```
 
+## 评估模式
+
+- 默认采用“部署即开始”的滚动评估模式，不依赖固定日期窗口。
+- 部署完成后每个交易日持续产出提交文件与指标。
+
 ## 比赛提交文件
 
 - `submissions/orders.jsonl`

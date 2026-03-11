@@ -1,0 +1,3 @@
+mode: rolling
+start_on_deploy: true
+archive_daily: true

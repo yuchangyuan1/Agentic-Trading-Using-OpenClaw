@@ -5,7 +5,7 @@
 ## 0. 范围与目标
 - 市场：仅美股（Stock）
 - 账户：Alpaca Paper（初始资金 100,000 USD）
-- 评估期：4/20–5/1
+- 评估期：部署后立即开始（滚动评估）
 - 提交产物：
   - `submissions/orders.jsonl`
   - `submissions/daily_stock.csv`
