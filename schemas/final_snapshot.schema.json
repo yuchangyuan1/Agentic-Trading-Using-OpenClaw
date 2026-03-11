@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["timestamp", "portfolio_value", "cash", "positions"],
+  "properties": {
+    "timestamp": {"type": "string"},
+    "portfolio_value": {"type": "number"},
+    "cash": {"type": "number"},
+    "positions": {"type": "array"}
+  }
+}

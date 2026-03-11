@@ -1,0 +1,117 @@
+{
+  "data_ts": "2026-03-11T21:06:06.497476+00:00",
+  "quality_score": 40,
+  "source_health": "degraded:RuntimeError",
+  "signals": [
+    {
+      "symbol": "AAPL",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "NVDA",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "AMZN",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "GOOGL",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "META",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "TSLA",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "JPM",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "XOM",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    },
+    {
+      "symbol": "UNH",
+      "signal": "sell",
+      "score": 0.0,
+      "confidence": 0.25,
+      "risk_level": "medium",
+      "reasons": [
+        "price_missing",
+        "quality_score=40"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "data_ts": "2026-03-11T21:06:06.497476+00:00",
+  "blocked_new_buy": true,
+  "trade_intents": [
+    {
+      "symbol": "AAPL",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "MSFT",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "NVDA",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "AMZN",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "GOOGL",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "META",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "TSLA",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "JPM",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "XOM",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    },
+    {
+      "symbol": "UNH",
+      "action": "hold",
+      "target_weight": null,
+      "reason": "price_missing; quality_score=40",
+      "signal_score": 0.0
+    }
+  ]
+}

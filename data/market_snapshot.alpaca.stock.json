@@ -1,0 +1,71 @@
+{
+  "data_ts": "2026-03-11T21:06:06.497476+00:00",
+  "market": "US_STOCK",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "TSLA",
+    "JPM",
+    "XOM",
+    "UNH"
+  ],
+  "quotes": {
+    "AAPL": {
+      "symbol": "AAPL",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "MSFT": {
+      "symbol": "MSFT",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "AMZN": {
+      "symbol": "AMZN",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "GOOGL": {
+      "symbol": "GOOGL",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "META": {
+      "symbol": "META",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "TSLA": {
+      "symbol": "TSLA",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "JPM": {
+      "symbol": "JPM",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "XOM": {
+      "symbol": "XOM",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    },
+    "UNH": {
+      "symbol": "UNH",
+      "price": 0.0,
+      "ts": "2026-03-11T21:06:06.497476+00:00"
+    }
+  },
+  "freshness": "realtime",
+  "source_health": "degraded:RuntimeError",
+  "quality_score": 40
+}

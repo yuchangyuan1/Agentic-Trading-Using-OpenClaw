@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["date", "equity", "cash", "positions_count"],
+  "properties": {
+    "date": {"type": "string"},
+    "equity": {"type": "number"},
+    "cash": {"type": "number"},
+    "positions_count": {"type": "integer", "minimum": 0}
+  }
+}

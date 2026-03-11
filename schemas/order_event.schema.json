@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["ts", "symbol", "side", "qty", "status"],
+  "properties": {
+    "ts": {"type": "string"},
+    "symbol": {"type": "string"},
+    "side": {"type": "string", "enum": ["buy", "sell"]},
+    "qty": {"type": "number", "minimum": 0},
+    "order_type": {"type": "string"},
+    "status": {"type": "string"},
+    "filled_avg_price": {"type": "number"},
+    "reason": {"type": "string"},
+    "signal_score": {"type": "number"}
+  }
+}
