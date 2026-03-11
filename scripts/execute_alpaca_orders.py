@@ -13,6 +13,15 @@ from core.order_logger import append_order_event
 from core.portfolio_state import calc_target_qty, positions_to_map
 
 
+def _load_yaml(path: Path) -> dict:
+    try:
+        import yaml  # type: ignore
+
+        return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}
+
+
 def _load_snapshot_quotes() -> dict:
     p = ROOT / "data" / "market_snapshot.alpaca.stock.json"
     if not p.exists():
@@ -22,6 +31,9 @@ def _load_snapshot_quotes() -> dict:
 
 def main() -> None:
     intents = json.loads((ROOT / "outputs" / "trade_intents.json").read_text(encoding="utf-8"))
+    strategy = _load_yaml(ROOT / "config" / "strategy_stock.yaml")
+    min_order_notional = float(strategy.get("execution", {}).get("min_order_notional", 500))
+
     adapter = AlpacaTradeAdapter()
     log_path = ROOT / "state" / "live_orders.jsonl"
     quotes = _load_snapshot_quotes()
@@ -57,6 +69,10 @@ def main() -> None:
         side = "buy" if delta > 0 else "sell"
         qty = abs(int(delta))
         if qty <= 0:
+            continue
+
+        est_notional = qty * price
+        if est_notional < min_order_notional:
             continue
 
         try:

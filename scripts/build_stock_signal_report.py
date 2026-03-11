@@ -17,7 +17,7 @@ def _load_yaml(path: Path) -> dict:
         return {}
 
 
-def _factor_score(bars: list[dict], px: float) -> tuple[float, list[str]]:
+def _factor_score(bars: list[dict], px: float, w_m: float, w_v: float, w_l: float) -> tuple[float, list[str]]:
     reasons: list[str] = []
     if len(bars) < 22:
         return 0.5 if px > 0 else 0.0, ["insufficient_bars(<22)"]
@@ -33,11 +33,11 @@ def _factor_score(bars: list[dict], px: float) -> tuple[float, list[str]]:
     vol_20d = float(np.std(daily_ret[-20:])) if len(daily_ret) >= 20 else float(np.std(daily_ret))
     vol_ratio_5d = (float(np.mean(vol[-5:])) / float(np.mean(vol[-20:]))) if np.mean(vol[-20:]) > 0 else 1.0
 
-    momentum_score = np.clip((ret_20d + ret_5d) / 0.12, -1, 1)
-    vol_score = np.clip(1 - vol_20d / 0.04, -1, 1)
-    liq_score = np.clip((vol_ratio_5d - 0.8) / 0.7, -1, 1)
+    momentum_score = float(np.clip((ret_20d + ret_5d) / 0.12, -1, 1))
+    vol_score = float(np.clip(1 - vol_20d / 0.04, -1, 1))
+    liq_score = float(np.clip((vol_ratio_5d - 0.8) / 0.7, -1, 1))
 
-    score = 0.50 + 0.25 * momentum_score + 0.15 * vol_score + 0.10 * liq_score
+    score = 0.50 + w_m * momentum_score + w_v * vol_score + w_l * liq_score
     score = float(np.clip(score, 0, 1))
 
     reasons.extend(
@@ -46,6 +46,7 @@ def _factor_score(bars: list[dict], px: float) -> tuple[float, list[str]]:
             f"ret_20d={ret_20d:.4f}",
             f"vol_20d={vol_20d:.4f}",
             f"volume_ratio_5d={vol_ratio_5d:.3f}",
+            f"weights(m/v/l)=({w_m:.2f}/{w_v:.2f}/{w_l:.2f})",
         ]
     )
     return score, reasons
@@ -58,6 +59,17 @@ def main() -> None:
     buy_score = float(strategy.get("signal", {}).get("buy_score", 0.6))
     sell_score = float(strategy.get("signal", {}).get("sell_score", 0.4))
 
+    factors = strategy.get("signal", {}).get("factors", {})
+    w_m = float(factors.get("momentum_weight", 0.25))
+    w_v = float(factors.get("volatility_weight", 0.15))
+    w_l = float(factors.get("liquidity_weight", 0.10))
+
+    # normalize if overweight
+    total = abs(w_m) + abs(w_v) + abs(w_l)
+    if total > 0.5:
+        scale = 0.5 / total
+        w_m, w_v, w_l = w_m * scale, w_v * scale, w_l * scale
+
     snap = json.loads(snap_path.read_text(encoding="utf-8"))
     quality = int(snap.get("quality_score", 0))
 
@@ -66,7 +78,7 @@ def main() -> None:
         q = snap.get("quotes", {}).get(sym, {})
         bars = snap.get("daily_bars", {}).get(sym, [])
         px = float(q.get("price", 0) or 0)
-        score, reasons = _factor_score(bars, px)
+        score, reasons = _factor_score(bars, px, w_m=w_m, w_v=w_v, w_l=w_l)
 
         signal = "hold"
         if score >= buy_score:

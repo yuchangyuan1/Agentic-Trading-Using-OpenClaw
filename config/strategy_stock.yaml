@@ -14,6 +14,8 @@ risk:
 execution:
   order_type: market
   time_in_force: day
+  min_order_notional: 500
+  cooldown_hours: 24
   rebalance_times:
     - "10:00"
     - "15:30"
