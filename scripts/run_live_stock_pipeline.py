@@ -13,6 +13,7 @@ STEPS = [
     "scripts/execute_alpaca_orders.py",
     "scripts/export_submission_artifacts.py",
     "scripts/compute_eval_metrics.py",
+    "scripts/archive_daily_artifacts.py",
 ]
 
 

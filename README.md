@@ -28,6 +28,7 @@
   - `scripts/compute_eval_metrics.py`
   - `scripts/backtest_stock_signal_strategy.py`
   - `scripts/end_of_day_rollup.py`
+  - `scripts/archive_daily_artifacts.py`
   - `scripts/run_live_stock_pipeline.py`
 - 状态/产物：`state/*`, `submissions/*`, `outputs/*`
 - 改造清单：`ALPACA_STOCK_COMPETITION_REFACTOR_CHECKLIST.md`
