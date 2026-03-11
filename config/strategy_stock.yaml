@@ -1,0 +1,15 @@
+signal:
+  buy_score: 0.6
+  sell_score: 0.4
+risk:
+  max_pos_pct: 0.10
+  max_gross_exposure: 0.90
+  max_drawdown_day: -0.03
+  max_drawdown_total: -0.08
+  min_quality_score: 60
+execution:
+  order_type: market
+  time_in_force: day
+  rebalance_times:
+    - "10:00"
+    - "15:30"

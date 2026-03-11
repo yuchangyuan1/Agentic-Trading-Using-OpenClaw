@@ -1,0 +1,15 @@
+market_type: stock
+timezone: America/New_York
+base_url: https://paper-api.alpaca.markets
+data_feed: iex
+symbols:
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - META
+  - TSLA
+  - JPM
+  - XOM
+  - UNH
