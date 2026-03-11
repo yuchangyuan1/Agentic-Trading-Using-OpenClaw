@@ -30,10 +30,12 @@ def main() -> None:
     data_ts = datetime.now(timezone.utc).isoformat()
     try:
         latest = adapter.get_latest_snapshot(symbols)
+        daily_bars = adapter.get_daily_bars(symbols, lookback_days=40)
         source_health = "ok"
-        quality = 85
+        quality = 88
     except Exception as exc:
         latest = {s: {"symbol": s, "price": 0.0, "ts": data_ts} for s in symbols}
+        daily_bars = {s: [] for s in symbols}
         source_health = f"degraded:{type(exc).__name__}"
         quality = 40
 
@@ -42,6 +44,7 @@ def main() -> None:
         "market": "US_STOCK",
         "symbols": symbols,
         "quotes": latest,
+        "daily_bars": daily_bars,
         "freshness": "realtime",
         "source_health": source_health,
         "quality_score": quality,

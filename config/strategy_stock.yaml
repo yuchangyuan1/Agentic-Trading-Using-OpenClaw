@@ -1,6 +1,10 @@
 signal:
-  buy_score: 0.6
-  sell_score: 0.4
+  buy_score: 0.62
+  sell_score: 0.38
+  factors:
+    momentum_weight: 0.25
+    volatility_weight: 0.15
+    liquidity_weight: 0.10
 risk:
   max_pos_pct: 0.10
   max_gross_exposure: 0.90
